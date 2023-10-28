@@ -1,0 +1,19 @@
+.administration-container
+{
+    display: flex;
+    gap: 10px;
+
+}
+
+.guide-wrapper
+{
+    flex: 0 0 250px;
+}
+
+.admin-navigation-content
+{
+    flex: 0 0 calc(100% - 270px);
+    background-color: var(--mck-color-white);
+    border-radius: 10px;
+    padding: 10px 20px;
+}

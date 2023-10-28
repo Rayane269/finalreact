@@ -1,0 +1,28 @@
+version: '3.7'
+
+
+services:
+
+  database:
+    restart: unless-stopped
+    container_name: webcup_database
+    image: mariadb:latest
+    environment:
+      MARIADB_PASSWORD: azad
+      MARIADB_ROOT_PASSWORD: azad
+      MARIADB_USER: azad
+    volumes:
+      - webcup-data:/var/lib/mariadb/data
+      # - database-data:/var/lib/MARIADBql/data:rw
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  webcup-data:  
+    driver: local

@@ -1,0 +1,122 @@
+%btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 10px
+}
+
+
+.btn-signin {
+    @extend %btn;
+    background-color: var(--mck-color-black);
+    color: var(--mck-color-white);
+}
+
+.btn-signup {
+    @extend %btn;
+    border: 1px solid var(--mck-color-black);
+    color: var(--mck-color-black);
+}
+
+.dark {
+    &.btn-signin {
+        background-color: var(--mck-color-white);
+        color: var(--mck-color-black);
+    }
+    
+    &.btn-signup {
+        border: 1px solid var(--mck-color-white);
+        color: var(--mck-color-white);
+    }
+}
+
+
+/** ========================= Button hamburger ========================== **/
+
+.msh-hamburger
+{
+    width: 40px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.msh-hamburger-container
+{
+    position: relative;
+    width: 16px;
+    height: 14px;
+    overflow: hidden;
+
+    .msh-hamburger-top, .msh-hamburger-middle, .msh-hamburger-bottom 
+    {
+        position: absolute;
+        width: 16px;
+        height: 2px;
+        background-color: #9a9a9a;
+        transition: top .25s,background-color .5s,transform .25s;
+      }
+
+    .msh-hamburger-top
+    {
+        top: 0;
+        left: 0;
+        transform: translate(0);
+    }
+
+    .msh-hamburger-middle
+    {
+        top: 6px;
+        left: 0;
+        transform: translate(8px);
+    }
+
+    .msh-hamburger-bottom
+    {
+        top: 12px;
+        left: 0;
+        transform: translate(4px);
+    }
+}
+
+.sidebar-btn:hover, .msh-hamburger:hover
+{
+    .msh-hamburger-top
+    {
+        transform: translate(8px);
+    }
+
+    .msh-hamburger-middle
+    {
+        transform: translate(0);
+    }
+
+    .msh-hamburger-bottom
+    {
+        transform: translate(10px);
+    }
+}
+
+.is_active 
+{
+    .msh-hamburger-top
+    {
+        top: 6px;
+        left: 0;
+        transform: translate(0) rotate(225deg);
+    }
+
+    .msh-hamburger-middle
+    {
+        top: 6px;
+        left: 0;
+        transform: translate(16px);
+    }
+
+    .msh-hamburger-bottom
+    {
+        top: 6px;
+        left: 0;
+        transform: translate(0) rotate(135deg);
+    }
+}

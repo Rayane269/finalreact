@@ -131,6 +131,14 @@ export default function Register() {
             </InputLabel>
           </div>
         )}
+        <div className='mt-4'>
+          <PrimaryButton
+            className={classNames({ 'opacity-25': form.processing })}
+            disabled={form.processing}
+          >
+            Register
+          </PrimaryButton>
+        </div>
 
         <div className="flex items-center justify-end mt-4">
           <Link
@@ -139,13 +147,6 @@ export default function Register() {
           >
             Already registered?
           </Link>
-
-          <PrimaryButton
-            className={classNames('ml-4', { 'opacity-25': form.processing })}
-            disabled={form.processing}
-          >
-            Register
-          </PrimaryButton>
         </div>
       </form>
     </AuthenticationCard>

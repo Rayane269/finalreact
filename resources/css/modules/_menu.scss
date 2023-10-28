@@ -1,0 +1,39 @@
+.content-menu
+{
+    margin-top: 10px;
+    padding: 8px 0;
+}
+
+.link-menu 
+{
+    padding: 0 10px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25px 1fr;
+    height: 43px;
+    gap: 20px;
+    transition: .2s ease;
+    border-radius: 3px;
+
+    .link-icon {
+        height: 35px;
+        display: flex;
+        align-items: center;
+    }
+
+    svg {
+        transition: .2s ease;
+    }
+
+    &:hover
+    {
+        --color: var(--mck-color-gray);
+        background-color: var(--mck-color-gray-1);
+        color: var(--color);
+
+        svg {
+            color: var(--color);
+            fill: var(--color);
+        }
+    }
+}

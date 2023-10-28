@@ -1,0 +1,83 @@
+.about-motivation
+{
+    background-color: var(--mck-color-black);
+    padding: 60px 50px;
+    color: var(--mck-color-white);
+
+    span {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 1;
+        margin-top: 20px;
+    }
+}
+
+.about-motivation-content
+{
+    display: flex;
+    gap: 30px;
+
+    & > div {
+        flex: 0 0 40%;
+    }
+    aside {
+        h2 {
+            margin: 50px 0;
+        }
+
+        p {
+            line-height: 2;
+            font-size: 18px;
+            word-spacing: 3px;
+            text-align: justify;
+        }
+    }
+}
+
+.our-team,.our-partenar {
+    padding: 60px 50px;
+    background-color: var(--mck-color-white);
+}
+
+.our-team-description
+{
+    display: flex;
+    gap: 30px;
+
+    & > div {
+        flex: 0 0 60%;
+    }
+
+     h2 {
+        font-size: 50px;
+        line-height: 1;
+        margin-top: 20px;
+    }
+
+    aside {
+        p {
+            line-height: 2;
+            font-size: 18px;
+            word-spacing: 3px;
+            text-align: justify;
+        }
+    }
+}
+.our-partenar-content{
+    div h2 {
+        font-size: 50px;
+        line-height: 1;
+        margin-top: 20px;
+    }
+}
+
+@include down(700) {
+    .about-motivation-content
+    {
+        flex-direction: column;
+    }
+}

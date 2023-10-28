@@ -21,6 +21,7 @@ export interface User {
   email_verified_at: Nullable<DateTime>;
   created_at: DateTime;
   updated_at: DateTime;
+  is_admin: boolean
 }
 
 export interface Auth {

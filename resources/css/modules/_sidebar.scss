@@ -1,0 +1,71 @@
+
+.webcup-app-sidebar
+{
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    transition: opacity 0s ease 0s, width 750ms ease 0s;
+    z-index: 2023;
+}
+
+.sidebar-btn
+{
+    position: fixed;
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0;
+    z-index: 2023;
+    transition: all .3s ease;
+    background-color: var(--mck-color-gray-1);
+    
+    &:hover
+    {
+        background-color: var(--mck-color-black);
+        color: var(--mck-color-white);
+    }
+
+    &.is_active 
+    {
+        background-color: var(--mck-color-black);
+        color: var(--mck-color-white);
+    }
+
+    .text-logo
+    {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
+
+@include down(700)
+{
+    .webcup-app-sidebar
+    {
+       height: 50px !important;
+       background-color: var(--mck-color-white);
+    }
+
+    .sidebar-btn
+    {
+        height: 100% !important;
+        width: 100% !important;
+        position: static;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
+
+        .text-logo
+        {
+            writing-mode: unset;
+            text-orientation: unset;
+        }
+    }
+}

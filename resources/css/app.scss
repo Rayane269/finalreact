@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Variables ==================
+:root {
+    --mck-color-red: #f25353;
+    --mck-color-green: #1da660;
+    --mck-color-pink: rgb(255, 192, 203);
+    --mck-color-blue: #2c7eca;
+    --mck-color-gray: #b3b3b3;
+
+
+    --mck-color-red-1: #f253533a;
+    --mck-color-green-1: #1da65f3a;
+    --mck-color-pink-1: rgba(255, 192, 203, 0.404);
+    --mck-color-blue-1: #2c7eca3a;
+    --mck-color-gray-1: #f0efef;
+    --mck-color-black: #000;
+    --mck-color-white: #fff;
+
+    --mck-light-color-txt: #121c42;
+    --mck-dark-color-txt: #f0f3ff;
+
+    --mck-color-border: #ccc;
+    --mck-color-shadow: #d8e1e8;
+    --mck-color-transparent: #{rgba(#121c42, 0)};    
+    --color: var(--mck-color-black)
+    --background: var(--mck-color-white)
+    --space-section: 150px;
+    --card-padding: 16px;
+    --header-height: 137px;
+    --gap: 20px;
+    --space: 8px;
+    --navbar: 56px;
+    --shadow: 0px 0px 22px -6px rgba(74,74,74,0.24),
+    0px 15px 12px 0px rgba(0,0,0,0.22);
+}
+
+@import './tools/functions';
+@import './tools/mixins';
+
+
+@import './page/about';
+@import './page/administration';
+
+body
+{
+    background-color: var(--mck-color-gray-1);
+}
+
+@import './modules/sidebar';
+@import './modules/content';
+@import './modules/btn';
+@import './modules/popup';
+@import './modules/navbar';
+@import './modules/menu';

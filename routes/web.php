@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminDashbordController;
+use App\Http\Controllers\Admin\DashbordController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UnloggedPages;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,13 +21,18 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/about', [UnloggedPages::class, 'about']);
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::get('/test', [UserController::class, 'test'])->name('user.test');
 });
 
 Route::middleware([
@@ -29,7 +40,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+    Route::get('/administration',[DashbordController::class,'index'])->name('administration');
+    Route::get('admin/dashboard',[AdminDashbordController::class,'index'])->name('admin.dashboard');
+    Route::get('admin/test',[AdminDashbordController::class,'test'])->name('admin.test');
 });

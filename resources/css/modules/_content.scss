@@ -1,0 +1,41 @@
+.sidebar-showed .webcup-app-container
+{
+    transform: scale(0.6325);
+    transition: opacity 0s ease 0s, transform 750ms ease 0s;
+}
+
+.webcup-app-container
+{
+    position: relative;
+    transition: transform 750ms ease 0s;
+    transform-origin: 100% 0% 0px;
+    z-index: 5;
+    padding: 12px;
+}
+
+.pages-unlogged
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-header
+{
+    background-color: var(--mck-color-white);
+    padding: 60px 40px 30px;
+    border-radius: 8px;
+    height: 95vh;
+
+    h1 {
+        font-size: 60px;
+        line-height: 1;
+    }
+}
+
+@include down(700) {
+    .about-header
+    {
+        padding: 15px;
+    }
+}

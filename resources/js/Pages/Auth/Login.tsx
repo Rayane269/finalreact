@@ -8,6 +8,8 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
+import { useAboutUserStore } from '@/Store/user';
+import { User } from '@/types';
 
 interface Props {
   canResetPassword: boolean;
@@ -83,6 +85,16 @@ export default function Login({ canResetPassword, status }: Props) {
           </label>
         </div>
 
+        <div className="mt-4">
+          <PrimaryButton
+            className={classNames({'opacity-25': form.processing })}
+            disabled={form.processing}
+          >
+            Log in
+          </PrimaryButton>
+        </div>
+
+
         <div className="flex flex-col space-y-2 md:flex-row md:items-center md:justify-between md:space-y-0 mt-4">
           {canResetPassword && (
             <div>
@@ -102,13 +114,6 @@ export default function Login({ canResetPassword, status }: Props) {
             >
               Need an account?
             </Link>
-
-            <PrimaryButton
-              className={classNames('ml-4', { 'opacity-25': form.processing })}
-              disabled={form.processing}
-            >
-              Log in
-            </PrimaryButton>
           </div>
         </div>
       </form>

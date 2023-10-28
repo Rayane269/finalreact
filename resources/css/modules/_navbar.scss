@@ -1,0 +1,181 @@
+
+// ========================== User loggged and admin ================================
+
+.gck-nav-masthead
+{
+    --height: 56px;
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--mck-color-white);
+    padding: 0 20px;
+}
+
+.gck-nav-start
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    @include up(1000) {
+        width: 200px;
+    }
+}
+
+.gck-guide-button
+{
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.gck-logo
+{
+    svg
+    {
+        color: var(--mck-color-green);
+    }
+
+    @include down(600) {
+        display: none;
+    }
+}
+
+.gcrdt-topbar-searchbox
+{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--mck-color-border);
+    background-color: var(--mck-color-white);
+    border-radius: 50px;
+    padding: 0 12px;
+
+    &.focus
+    {
+        border: 2px solid var(--mck-color-blue);
+    }
+
+    form
+    {
+        width: 100%;
+    }
+
+    .searchbox-content
+    {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 25px calc(100% - 50px) 25px;
+        gap: 8px;
+    }
+
+    .gcrdt-searchicon
+    {
+        height: 20px;
+        width: 20px;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+    }
+
+    @include up(900) {
+        width: 480px;
+    }
+
+    @include down(430) {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        padding: 0px 0 0 5px;
+        justify-content: center;
+        cursor: pointer;
+        
+        .searchbox-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & input, #search-clear-button {
+            display: none;
+        }
+    }
+}
+
+.gck-nav-end
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+
+    @include up(1000) {
+        width: 200px;
+    }
+}
+
+.gcrdt-topbar-notification
+{
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    width: 35px;
+    height: 35px;
+
+    .gcrdt-icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .notification-count
+    {
+        position: absolute;
+        background-color: var(--mck-color-red);
+        color: var(--mck-color-white);
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        border-radius: 9px;
+        top: -8px;
+        right: -5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+    }
+}
+
+.gcrdt-topbar-menu
+{
+    cursor: pointer;
+    user-select: none;
+    button {
+        border-radius: 50%;
+        display: block;
+    }
+}
+
+.avatar
+{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--mck-color-gray);
+    color: var(--mck-color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    user-select: none;
+}
